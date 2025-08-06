@@ -2,12 +2,6 @@ pipeline {
     agent any
     
     stages {
-        stage('clone') {
-            steps {
-                sh 'echo "git clone https://github.com/sharanagoudab/Docker-Project.git"'
-                sh 'git clone https://github.com/sharanagoudab/Docker-Project.git'
-
-    stages {
         stage('Build') {
             steps {
                 sh 'echo "mvn install"'
