@@ -1,5 +1,11 @@
 pipeline {
     agent any
+    
+    stages {
+        stage('clone') {
+            steps {
+                sh 'echo "git clone https://github.com/sharanagoudab/Docker-Project.git"'
+                sh 'git clone https://github.com/sharanagoudab/Docker-Project.git'
 
     stages {
         stage('Build') {
@@ -11,15 +17,15 @@ pipeline {
         stage('Build the docker image') {
             steps {
                 sh 'echo "docker build"'
-                sh 'docker build -t amol1996/springpetclinic-123923498:v1.2 . && docker images'
+                sh 'docker build -t sharanagoudab/Docker-Project:v1.2 . && docker images'
                 sh 'docker images'
             }
         }
         stage('push the docker image') {
             steps {
                sh 'echo "docker push"'
-               sh 'docker push amol1996/springpetclinic-123923498:v1.2'
-               sh 'docker rmi amol1996/springpetclinic-123923498:v1.2'
+               sh 'docker push haranagoudab/Docker-Project:v1.2'
+               sh 'docker rmi haranagoudab/Docker-Project:v1.2'
                sh 'docker images' 
             }
         }
