@@ -5,7 +5,7 @@ pipeline {
         stage('Build') {
             steps {
                 sh 'echo "mvn install"'
-                sh 'mvn deploy'
+                sh 'mvn install'
             }
         }
         stage('Build the docker image') {
